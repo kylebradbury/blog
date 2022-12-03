@@ -1,0 +1,29 @@
+project:
+  type: website
+
+website:
+  title: "Kyle Bradbury's Blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: house-fill
+        href: https://kylebradbury.org/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/bradburykyle/
+      - icon: github
+        href: https://github.com/kylebradbury
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=eBm0d6kAAAAJ&hl=en
+      - icon: twitter
+        href: https://twitter.com/kylejbradbury
+  page-footer:
+    center: 
+      - text: "Copyright © Kyle Bradbury 2022"
+  favicon: favicon.ico
+format:
+  html:
+    theme: simplex
+    css: styles.css
+
+
+

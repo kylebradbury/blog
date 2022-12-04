@@ -22,7 +22,7 @@ website:
   favicon: favicon.ico
 format:
   html:
-    theme: simplex
+    theme: cosmo
     css: styles.css
 
 

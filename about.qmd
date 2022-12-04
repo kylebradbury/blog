@@ -16,9 +16,6 @@ about:
     - icon: mortarboard-fill
       text: Google Scholar
       href: https://scholar.google.com/citations?user=eBm0d6kAAAAJ&hl=en
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
 
 ---
 

@@ -1,7 +1,13 @@
 /* css styles */
 
-.quarto-title-banner {
-    background: #1aad3f;
+.quarto-title-banner  {
+    /* background: #1aad3f; */
+    background: white;
+    color: #373a3c;
+}
+
+.quarto-title-banner .quarto-title .title {
+    font-weight: 400;
 }
 
 .navbar-dark {

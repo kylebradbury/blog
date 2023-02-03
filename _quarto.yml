@@ -5,17 +5,18 @@ website:
   title: "Kyle Bradbury's Blog"
   navbar:
     right:
-      - about.qmd
-      - icon: house-fill
+      - text: About
+        href: about.qmd
+        # icon: file-person
+      - text: Homepage
+        # icon: house-fill
         href: https://kylebradbury.org/
-      - icon: linkedin
-        href: https://www.linkedin.com/in/bradburykyle/
-      - icon: github
-        href: https://github.com/kylebradbury
-      - icon: mortarboard-fill
-        href: https://scholar.google.com/citations?user=eBm0d6kAAAAJ&hl=en
-      - icon: twitter
-        href: https://twitter.com/kylejbradbury
+      # - text: LinkedIn
+        # icon: linkedin
+        # href: https://www.linkedin.com/in/bradburykyle/
+        
+      # - icon: mortarboard-fill
+      #   href: https://scholar.google.com/citations?user=eBm0d6kAAAAJ&hl=en
   page-footer:
     center: 
       - text: "Copyright © Kyle Bradbury 2023"

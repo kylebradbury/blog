@@ -220,7 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="start-with-a-decent-plot" class="level2">
 <h2 class="anchored" data-anchor-id="start-with-a-decent-plot">Start with a “decent” plot</h2>
 <p>Let’s begin by gathering our data. Let’s make up some data that consists of reporting the efficiency of three models as you vary the size of a parameter that is in square meters; we will name these three models “A”, “B”, and “C”. We will also set a baseline efficiency value against which we want to compare all the models.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="30">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -238,10 +238,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>For the simplest “decent” plot, we use the default settings of <code>matplotlib</code> and a very few lines of code, making sure that we label our axes and include a legend. This quickly produces a plot that contains all of the necessary information to interpret our data, but is not overly compelling.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="31">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>figsize)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the baseline</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.plot([x[<span class="dv">0</span>],x[<span class="op">-</span><span class="dv">1</span>]],[baseline, baseline],label<span class="op">=</span><span class="st">"Baseline"</span>)</span>
@@ -266,10 +266,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="distinguish-different-types-of-information" class="level2">
 <h2 class="anchored" data-anchor-id="distinguish-different-types-of-information">1. Distinguish different types of information</h2>
 <p>First of all, it’s not clear that the baseline is any different from the rest of the lines. In our data, the baseline is a single value that’s plotted for comparison, and should be so distinguished in the plot. Let’s start by making the baseline a different color and style from the rest of the lines to indicate it is different from the rest.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="32">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>figsize)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -------------------</span><span class="re">BEGIN</span><span class="co">-CHANGES------------------------</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the baseline</span></span>
@@ -296,10 +296,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="emphasize-whats-important-by-using-colors-strategically" class="level2">
 <h2 class="anchored" data-anchor-id="emphasize-whats-important-by-using-colors-strategically">2. Emphasize what’s important by using colors strategically</h2>
 <p>The line colors in this plot are pretty random and don’t distinguish between the other lines. In some cases that may be fine if there is no reason why any one line should stand out from the rest, but for our case, we want to emphasize the top performing model (Model C) and distinguish it from the rest. This can be easily accomplished by making one line a strong color, like red in this case, and using different shades of another color to group the rest (grey in this case), causing the line we’re trying to emphasize to pop out.</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="33">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>figsize)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the baseline</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.plot([x[<span class="dv">0</span>],<span class="bu">max</span>(x)],[baseline, baseline],label<span class="op">=</span><span class="st">"Baseline"</span>,</span>
@@ -335,10 +335,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="ditch-the-box" class="level2">
 <h2 class="anchored" data-anchor-id="ditch-the-box">3. Ditch the box</h2>
 <p>Our plot is already telling a much more compelling story, but there is still room for improvement. Edward Tufte, author of a number of influential data visualization books, introduced the concept of the data-to-ink ratio for plots, which states that the most “ink” (for the digital age, think pixels) in a chart should be devoted to displaying the data and not used for other components. Applying that principle here, the box doesn’t really add value. We just need some axes. Let’s remove the top and right components of the box, and leave only the y-ticks on the left of the plot.</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="34">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>figsize)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the baseline</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.plot([x[<span class="dv">0</span>],<span class="bu">max</span>(x)],[baseline, baseline],label<span class="op">=</span><span class="st">"Baseline"</span>,</span>
@@ -384,10 +384,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="make-the-legend-be-effortless-to-read" class="level2">
 <h2 class="anchored" data-anchor-id="make-the-legend-be-effortless-to-read">4. Make the legend be effortless to read</h2>
 <p>Legends are vital for interpreting the plot, but having a separate legend in a line plot adds in an additional layer of effort for the reader to refer back and forth to the legend to understand the data. With the reader in mind, we can make this easier, buy putting the label of the legend right at the end of the plot and coloring the text of the legend the same as the line color to make the act entirely effortless. We’ll also set the x-ticks to be whole numbers to clean up the x-axis as well.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="35">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>figsize)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the baseline</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.plot([x[<span class="dv">0</span>],<span class="bu">max</span>(x)],[baseline, baseline],label<span class="op">=</span><span class="st">"Baseline"</span>,</span>
@@ -451,10 +451,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="size-fonts-for-the-reader" class="level2">
 <h2 class="anchored" data-anchor-id="size-fonts-for-the-reader">5. Size fonts for the reader</h2>
 <p>Fonts can also add legibility and professionalism. Let’s increase the font size across the plot to make the text more legible. We’ll also enable TeX typesetting in our labels so that the exponent is displayed properly in the x-axis label as <span class="math inline">\(m^2\)</span> rather than m^2.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="36">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>figsize)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -------------------</span><span class="re">BEGIN</span><span class="co">-CHANGES------------------------</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define font sizes</span></span>
@@ -526,10 +526,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="make-your-figure-crystal-clear-by-saving-at-a-high-resolution">6. Make your figure crystal clear by saving at a high resolution</h2>
 <p>The final step is to save the figure to a crystal clear image file to be used in a presentation, publication, or whatever it may be. You’ll want to save your figure to be sufficiently high resolution so it is not blurry when you use it. You’ll certainly want the resolution to be at least 150 dots per inch (DPI) for web applications (for higher resolution monitors), with 300 DPI and above appropriate for printing. There is a tradeoff between resolution and file size that needs to be made in each case.</p>
 <p>I always recommend setting your figure size explicitly as well, to meet the needs of your particular application.</p>
-<div class="cell">
+<div class="cell" data-execution_count="37">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>figsize)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define font sizes</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>SIZE_DEFAULT <span class="op">=</span> <span class="dv">14</span></span>
